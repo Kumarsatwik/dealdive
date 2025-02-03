@@ -1,103 +1,179 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# DealDive - React Native E-commerce App
 
-# Getting Started
+A full-stack e-commerce solution with modern features like AR product visualization, seamless payments, and atomic design architecture. Inspired by Flipkart's functionality with enhanced user experiences.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+![DealDive Demo](https://example.com/path-to-demo-gif.gif) <!-- Add actual demo GIF link -->
 
-## Step 1: Start Metro
+## Key Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### Core Functionality
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- 🛍️ Product Browsing & Search with AR Preview
+- 🔐 Phone-based User Authentication
+- 🛒 Real-time Cart Synchronization
+- 💳 Razorpay Payment Gateway Integration
+- 📱 Cross-platform (iOS & Android) Support
+- 📊 Admin Dashboard with Analytics
 
-```sh
-# Using npm
-npm start
+### Enhanced Experiences
 
-# OR using Yarn
+- Augmented Reality product visualization
+- Order tracking with real-time updates
+- Personalized product recommendations
+- Offline-first cart functionality
+- Secure JWT-based authentication
+
+## Tech Stack
+
+### Frontend
+
+- **React Native** (Core framework)
+- **Redux Toolkit** (State management)
+- **React Navigation** (Routing)
+- **React Native Reanimated** (Animations)
+- **React Native Paper** (UI Components)
+- **React Native AR** (Augmented Reality)
+
+### Backend
+
+- **Node.js/Express.js** (REST API)
+- **MongoDB** (Database)
+- **Mongoose** (ODM)
+- **AdminJS** (Admin Dashboard)
+- **Razorpay** (Payment Gateway)
+- **JWT** (Authentication)
+
+### Services
+
+- **Render** (Backend Hosting)
+- **MongoDB Atlas** (Cloud Database)
+- **Firebase** (Optional for Analytics/Push)
+
+## Project Structure
+
+### Frontend (React Native)
+
+```
+src/
+├── components/    # Atomic Design Components
+│   ├── common/     # Basic UI Elements
+│   ├── ui/         # Composite Components
+│   └── layouts/    # Complex UI Sections
+├── screens/       # App Screens
+├── navigation/    # Routing Configuration
+├── store/         # Redux Store
+├── services/       # API Clients
+└── utils/         # Helpers & Config
+```
+
+### Backend (Node.js)
+
+```
+backend/
+├── models/        # MongoDB Schemas
+├── routes/        # Express Routes
+├── controllers/   # Business Logic
+├── config/        # Environment Setup
+├── middlewares/   # Auth & Validations
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js v18+
+- MongoDB Atlas URI
+- Razorpay API keys
+- React Native development environment
+
+### Installation
+
+1. Clone the repository[frontend/backend]:
+
+```bash
+git clone https://github.com/kumarsatwik/dealdive.git
+git clone https://github.com/kumarsatwik/dealdive-backend.git
+```
+
+2. Install dependencies:
+
+```bash
+# Frontend
+cd dealdive && yarn install
+
+
+# Backend
+cd backend && yarn install
+```
+
+3. Environment Setup:
+
+```bash
+# Frontend .env
+API_BASE_URL=your_backend_url
+RAZORPAY_KEY_ID=your_razorpay_key
+
+# Backend .env
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+```
+
+## Running the App
+
+### Development
+
+```bash
+# Start Metro
 yarn start
-```
 
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
+# Android
 yarn android
-```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
+# iOS
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### Production Build
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+```bash
+# Android
+cd android && ./gradlew assembleRelease
 
-## Step 3: Modify your app
+# iOS
+cd ios && pod install && xcodebuild -workspace dealdive.xcworkspace -scheme dealdive -configuration Release
+```
 
-Now that you have successfully run the app, let's make changes!
+## Key Packages & Purpose
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+| Package                 | Purpose                       |
+| ----------------------- | ----------------------------- |
+| react-native-reanimated | Smooth animations & gestures  |
+| react-navigation        | Native-like navigation        |
+| react-native-paper      | Material Design components    |
+| redux-toolkit           | State management              |
+| axios                   | API communication             |
+| react-native-viro       | AR product visualization      |
+| razorpay-react-native   | Payment processing            |
+| jwt-decode              | Authentication token handling |
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## Demo
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+[![DealDive Demo Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://youtube.com/watch?v=YOUR_VIDEO_ID)
 
-## Congratulations! :tada:
+<!-- Add actual screenshots -->
 
-You've successfully run and modified your React Native App. :partying_face:
+| Home Screen   | AR View     | Checkout          |
+| ------------- | ----------- | ----------------- |
+| ![Home](link) | ![AR](link) | ![Checkout](link) |
 
-### Now what?
+## Contributing
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/new-feature`
+3. Commit changes: `git commit -m 'Add some feature'`
+4. Push to branch: `git push origin feature/new-feature`
+5. Open Pull Request
 
-# Troubleshooting
+## License
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-
-
-atoms -> common (for basic reusable components)
-molecules -> ui (for slightly more complex UI components)
-organisms -> layouts (for larger composite components)
-templates -> screens (for full screen templates/layouts)
+MIT License - See [LICENSE](LICENSE) for details
