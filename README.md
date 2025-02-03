@@ -2,7 +2,11 @@
 
 A full-stack e-commerce solution with modern features like AR product visualization, seamless payments, and atomic design architecture. Inspired by Flipkart's functionality with enhanced user experiences.
 
-![DealDive Demo](https://example.com/path-to-demo-gif.gif) <!-- Add actual demo GIF link -->
+<!-- Add actual demo GIF link -->
+
+
+https://github.com/user-attachments/assets/9778ac5f-3375-4d2c-9076-08b8dc816552
+
 
 ## Key Features
 
