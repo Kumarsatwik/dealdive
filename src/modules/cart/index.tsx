@@ -1,5 +1,5 @@
 import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, { FC } from 'react';
 import CustomSafeAreaView from '@components/common/CustomSafeAreaView';
 import {useAppSelector} from '@store/reduxHook';
 import {selectCartItems} from './api/slice';
@@ -9,8 +9,9 @@ import {Colors} from '@utils/Constants';
 import OrderItems from './common/OrderItems';
 import PlaceOrderButton from './common/PlaceOrderButton';
 
-const Cart = () => {
+const Cart:FC = () => {
   const carts = useAppSelector(selectCartItems);
+  const user = useAppSelector(state => state.account.user) as any;
 
   const renderItem = ({item}: any) => <OrderItems item={item} />;
 
@@ -18,9 +19,13 @@ const Cart = () => {
     <CustomSafeAreaView>
       <View style={styles.container}>
         <Text style={styles.heading}>My Cart</Text>
+        <Text style={styles.number}>
+          Deliver to : {user?.phone ? user?.phone : ''}
+        </Text>
 
         <Text style={styles.address}>
-          Deliver to: Login first to place your orders
+          Deliver to:{' '}
+          {user?.address ? user?.address : 'Login first to place your orders'}
         </Text>
       </View>
       {carts.length > 0 ? (
